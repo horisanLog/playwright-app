@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+  # test:
+  #   build: .
+  #   volumes:
+  #     - .:/app
+  #   command: npm run test
+  #   depends_on:
+  #     - web
